@@ -17,7 +17,7 @@ function App() {
   const [isProcessingCart, setIsProcessingCart] = useState(false);
   const [backendResponse, setBackendResponse] = useState(null);
 
-  const API_URL = "https://indra-ivf-project.onrender.com";
+  const API_URL = "https://indra-ivf-project.onrender.com/api";
 
   const handleLogin = async (e) => {
     if (e) e.preventDefault();
