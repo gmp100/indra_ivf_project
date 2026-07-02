@@ -1,0 +1,270 @@
+/* Global Reset & Styling Baseline */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Header Grid Layout */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2.5rem;
+  background: #0f172a;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.auth-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-email {
+  font-size: 0.9rem;
+  color: #38bdf8;
+  font-weight: 500;
+  background: rgba(56, 189, 248, 0.1);
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+/* Button UI kit */
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-login { background-color: #0ea5e9; color: white; }
+.btn-login:hover { background-color: #0284c7; }
+.btn-logout { background-color: #ef4444; color: white; }
+.btn-logout:hover { background-color: #dc2626; }
+
+/* Dashboard Container */
+.main-container {
+  max-width: 800px;
+  margin: 3.5rem auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.main-container h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: black;
+}
+
+.main-container p {
+  color: #1f2329;
+  margin-bottom: 2rem;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap; /* Taki screen choti hone par niche shift ho jaye */
+}
+
+/* Category Cards UI */
+.category-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  padding: 2.5rem 3.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  width: 140px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.1);
+  border-color: #0ea5e9;
+}
+
+/* Modal Structural Layout (Content cutting fixed) */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  width: 460px;
+  max-width: 100%; /* Fix screen bound scaling */
+  max-height: 90vh; /* Viewport bound standard mapping */
+  overflow-y: auto; /* Agar items bade hain toh andar scrolling chalu hogi, ui nahi katega */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+}
+
+/* Login Modal Compact Width */
+.login-modal {
+  width: 380px !important;
+}
+
+/* Floating Input Grid */
+.input-group {
+  position: relative;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.auth-input-full {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #cbd5e1;
+  border-radius: 8px;
+  background: #fff;
+  outline: none;
+  font-size: 0.95rem;
+  color: #0f172a;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.floating-label {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  padding: 0 4px;
+  color: #94a3b8;
+  transition: 0.2s ease all;
+  pointer-events: none;
+  font-size: 0.95rem;
+}
+
+.auth-input-full:focus,
+.auth-input-full:valid {
+  border-color: #0ea5e9;
+}
+
+.auth-input-full:focus ~ .floating-label,
+.auth-input-full:valid ~ .floating-label {
+  top: 0;
+  font-size: 0.75rem;
+  color: #0ea5e9;
+  font-weight: 600;
+}
+
+/* Item Rows Framework */
+.modal-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  margin: 0.5rem 0;
+  border: 2px solid #f1f5f9;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #f8fafc;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.modal-item:hover {
+  background-color: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.modal-item.selected {
+  border-color: #0ea5e9;
+  background-color: #f0f9ff;
+}
+
+/* Interactive Add/Selected Button */
+.add-btn {
+  background-color: #e2e8f0;
+  color: #475569;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-btn.red {
+  background-color: #ef4444;
+  color: white;
+  box-shadow: 0 4px 8px rgba(239, 68, 68, 0.25);
+}
+
+/* DB Calculation Log Visualizer */
+.db-response-box {
+  margin-top: 1.25rem;
+  padding: 1.25rem;
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.db-response-box p {
+  margin: 0.4rem 0;
+  font-size: 0.9rem;
+  color: #1e293b;
+}
+
+.db-response-box hr {
+  border: 0;
+  border-top: 1px solid #bbf7d0;
+  margin: 0.75rem 0;
+}
+
+/* Close & Utility Controls */
+.close-btn {
+  width: 100%;
+  margin-top: 1rem;
+  background-color: #334155;
+  color: white;
+}
+.close-btn:hover { background-color: #1e293b; }
+
+.form-submit-btn:disabled {
+  background-color: #94a3b8 !important;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.fade-in-effect {
+  animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
